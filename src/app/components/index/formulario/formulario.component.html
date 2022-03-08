@@ -1,0 +1,83 @@
+<div class="container">
+    <mat-toolbar>
+        <span>Persona</span>
+    </mat-toolbar>
+    <form [formGroup]="form">
+        <mat-card style="margin-top: 10px;">
+
+            <!-- Formulario registrar -->
+            <mat-grid-list cols="4" rowHeight="70px">
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Documento</mat-label>
+                        <input matInput autocomplete="of" formControlName="Documento">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="3" [rowspan]="6">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="250" height="250">
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Nombres</mat-label>
+                        <input matInput autocomplete="of" formControlName="Nombres">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Apellidos</mat-label>
+                        <input matInput autocomplete="of" formControlName="Apellidos">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Telefono</mat-label>
+                        <input matInput autocomplete="of" formControlName="Telefono">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Correo</mat-label>
+                        <input matInput autocomplete="of" formControlName="Correo">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Direccion</mat-label>
+                        <input matInput autocomplete="of" formControlName="Direccion">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid" style="margin-right: 15px;" (click)="agregarPersona()">Aceptar</button>
+                </mat-grid-tile>
+
+                <!-- Formulario Para Eliminar y Obtener  -->
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Documento</mat-label>
+                        <input matInput autocomplete="of" [formControl]='Person'>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <button type="submit" mat-raised-button color="primary" style="margin-right: 15px;" (click)="eliminarPersona()">Eliminar</button>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <button type="submit" mat-raised-button color="primary" style="margin-right: 15px;" (click)="obtenerPersona()">Obtener</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+            <!-- Mostrar Resultados -->
+            <span>{{crear}}</span>
+            <span>{{obtener}}</span>
+            <span>{{eliminar}}</span>
+        </mat-card>
+    </form>
+</div>
